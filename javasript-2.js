@@ -210,3 +210,5 @@ function power(val, pow){
     }
 }
 console.log(p81 + ' в степени ' + p82 + ' = ' + power(p81, p82));
+
+//end;
