@@ -157,19 +157,56 @@ if (p2 == 0) {
 //Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 3) и вернуть полученное значение (использовать switch).
 console.log(' задание 6 ');
 
+let p6 = prompt('выберите операцию которую хотите произвести 1 - сложение; 2 - вычитание; 3 - умножение; 4 - деление');
+
 function mathOperation(arg1, arg2, operation){
-        
-     };
+        switch (operation){
+            case 1:
+                    return ar1 + arg2;
+                    break;
+            case 2:
+                    return ar1 - arg2;
+                    break;
+            case 3:
+                    return ar1 * arg2;
+                    break;
+            case 4:
+                    return ar1 / arg2;
+                    break;
+            default:
+                    'оператор был не верно определен';
+        }
+     }
+
+let p61=OperationSum(p1, p2, p6);
+
+console.log('переменная 1 – ' + p1 + ' переменная 2 – ' + p2 + ' действие выбрано ' + p6);
+console.log('результат ' + p61);
 
 //задание - 7
 //*Сравнить null и 0. Попробуйте объяснить результат.
 console.log(' задание 7 ');
+
+console.log( null > 0 );  // (1) false
+console.log( null == 0 ); // (2) false
+console.log( null >= 0 ); // (3) true
+
+//Причина в том, что нестрогое равенство и сравнения > < >= <= работают по-разному. Сравнения преобразуют null в число, рассматривая его как 0. Поэтому выражение (3) null >= 0 истинно, а null > 0 ложно.
     
 //задание - 8
 //*С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.
 console.log(' задание 8 ');
 
-function power(val, pow){
-    
-};
+let p81 = prompt('введите число кототрое будет возведено в степень');
+let p82 = prompt('введите степень в кототрую хотите возвестти число');
 
+// 2 2*2 2*2*2 2*2*2*2
+function power(val, pow){
+    if (pow == 1){
+        return val;
+        }
+    else {
+    return val * power(val, pow - 1);
+    }
+}
+console.log(p81 + ' в степени ' + p82 + ' = ' + power(p81, p82));
