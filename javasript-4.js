@@ -27,12 +27,12 @@ if (inputNumber <= 999) {
 } else {
     delete digit.number;
     console.log(' загаданное число большее 999 – ');
-    console.log(digit);    
+    console.log(digit);
 }
 
 function getObject(numberToObject) {
     console.log(digit);
-    
+
     digit.units = Math.floor(digit.number % 10);
     console.log(' еденицы – ' + digit.units);
     digit.tens = Math.floor(digit.number / 10 % 10);
@@ -44,10 +44,37 @@ function getObject(numberToObject) {
 }
 
 
-//2. Для игры, реализованной на уроке, добавить возможность вывода хода номер n (номер задается пользователем)
-//console.log(' задание 2 ');
+//2. Реализовать корзину из урока 3 на базе объектов
+console.log(' задание 2 ');
 
+let productBasket = [
+    {
+        idProductv: 1,
+        nameProduct: "iphon12",
+        priseProduct: 99000,
+        descriptionProduct: "White 256Gb",
+    },
+    {
+        idProductv: 2,
+        nameProduct: "iphon11",
+        priseProduct: 54000,
+        descriptionProduct: "White 128Gb",
+    },
+    {
+        idProductv: 3,
+        nameProduct: "iphon10",
+        priseProduct: 32000,
+        descriptionProduct: "White 128Gb",
+    },
+];
 
+function countBasketPrice(arr) {
+    let total = 0;
+    for (let i = 0; i < arr.length; ++i) {
+        total += arr[i].priseProduct;
+        console.log(' тотвар в массиве ' + i + ' стоимость ' + arr[i].priseProduct);
+    }
+    return total;
+}
+console.log(' сумма корзины по товарам '+ countBasketPrice(productBasket));
 
-//3. *На базе игры, созданной на уроке, реализовать игру «Кто хочет стать миллионером?»
-//console.log(' задание 3 ');
